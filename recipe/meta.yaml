@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://www.alsa-project.org/files/pub/plugins/{{ name }}-{{ version }}.tar.bz2
-  sha256: 42eef98433d2c8d11f1deeeb459643619215a75aa5a5bbdd06a794e4c413df20
+  url: https://github.com/alsa-project/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: e1935e34766a461fd89e74743a83782d05db04242d9bbc7b60ea63f8451a41d1
 
 build:
   number: 0
