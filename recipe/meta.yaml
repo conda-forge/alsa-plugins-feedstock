@@ -22,7 +22,10 @@ requirements:
     - make
     - pkg-config
   host:
+    # unversioned dep on alsa-lib to get conda-forge pin
     - alsa-lib
+    # alsa-plugins needs an alsa-lib with a version >= to its own
+    - alsa-lib >={{ version }}
     - ffmpeg
     - jack
     - pulseaudio
