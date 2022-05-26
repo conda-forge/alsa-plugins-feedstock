@@ -1,16 +1,16 @@
 {% set name = "alsa-plugins" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://www.alsa-project.org/files/pub/plugins/{{ name }}-{{ version }}.tar.bz2
-  sha256: 1c0f06450c928d711719686c9dbece2d480184f36fab11b8f0534cb7b41e337d
+  url: https://github.com/alsa-project/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: e1935e34766a461fd89e74743a83782d05db04242d9bbc7b60ea63f8451a41d1
 
 build:
-  number: 5
+  number: 0
   skip: True  # [not linux]
 
 requirements:
@@ -22,7 +22,10 @@ requirements:
     - make
     - pkg-config
   host:
+    # unversioned dep on alsa-lib to get conda-forge pin
     - alsa-lib
+    # alsa-plugins needs an alsa-lib with a version >= to its own
+    - alsa-lib >={{ version }}
     - ffmpeg
     - jack
     - pulseaudio
