@@ -15,6 +15,6 @@ docker_image:
 ffmpeg:
 - '6'
 pulseaudio:
-- '16.1'
+- '17'
 target_platform:
 - linux-64
