@@ -1,11 +1,15 @@
 alsa_lib:
-- 1.2.10
+- '1.2'
 c_compiler:
 - gcc
 c_compiler_version:
 - '12'
+c_stdlib:
+- sysroot
+c_stdlib_version:
+- '2.12'
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,6 +19,9 @@ docker_image:
 ffmpeg:
 - '6'
 pulseaudio:
-- '17'
+- '17.0'
 target_platform:
-- linux-ppc64le
+- linux-64
+zip_keys:
+- - c_stdlib_version
+  - cdt_name
