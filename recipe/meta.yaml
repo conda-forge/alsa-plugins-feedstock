@@ -10,12 +10,13 @@ source:
   sha256: 6cee24859ed3575ab3534471bbb4489f6fa9816f31ea85fe968f77bc57296522
 
 build:
-  number: 10
+  number: 11
   skip: true  # [not linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - autoconf
     - automake
     - libtool
