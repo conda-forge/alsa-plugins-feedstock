@@ -1,5 +1,5 @@
 {% set name = "alsa-plugins" %}
-{% set version = "1.2.7.1" %}
+{% set version = "1.2.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://github.com/alsa-project/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 6cee24859ed3575ab3534471bbb4489f6fa9816f31ea85fe968f77bc57296522
+  sha256: 55fccb55e6e195d73e93924b327f66d371001175c5bff70fdfd90bc026d496ba
 
 build:
-  number: 10
+  number: 0
   skip: true  # [not linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - autoconf
     - automake
     - libtool
